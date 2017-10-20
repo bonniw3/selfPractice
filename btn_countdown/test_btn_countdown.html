@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Test</title>
+
+	<style>
+		#wrapper {
+		  text-align:center;
+		  border:1px solid #7F7F7F;
+		  width:150px;
+		  margin:25px auto;
+		  padding:25px;
+		  background-color:#E3E4E4;
+		}
+		button {
+		  width:125px;
+		  padding:10px;
+		}
+		button:focus {
+			outline: none;
+		}
+		.btnEnable {
+		  background-color:#E6F9D2;
+		  border:1px solid #97DE4C;
+		  color:#232323;
+		  cursor:pointer;
+		}
+		.btnDisable {
+			background-color:#FCBABA;
+			border:1px solid #DD3939;
+			color:#232323;
+			cursor:default;
+		}
+    </style>
+</head>
+<body>
+	<div id="wrapper">
+		<button type="button" id="myBtn" class="btnEnable" onclick="countDown(this)">簡訊驗證</button>
+	</div>
+
+	<script type="text/javascript">
+
+        function countDown(button) {
+		    var oldValue = button.innerHTML;
+		    var timeleft = 15;
+
+		    button.classList.add("btnDisable");
+		    button.disabled = true;
+		    button.innerHTML = 15 + ' ' + '秒後重發';
+		    
+	    	var downloadTimer = setInterval(function(){
+		    	timeleft--;
+		    	button.innerHTML = timeleft + ' ' + '秒後重發';
+			    if(timeleft <= 0)
+			        clearInterval(downloadTimer);
+		    },1000);
+
+		    setTimeout(function(){
+		        button.innerHTML = oldValue;
+		        button.disabled = false;
+		        button.classList.remove("btnDisable")
+		    }, 15000)
+		};
+
+    </script>
+</body>
+</html>
