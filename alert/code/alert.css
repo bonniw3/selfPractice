@@ -1,0 +1,287 @@
+* {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	font-family: 微軟正黑體,sans-serif;
+	
+}
+
+body {
+	/* background: url('img/problem_yes.png') 0 -122px no-repeat; */
+	background-color: #0c0c0c;
+}
+
+.alert_mask {
+	width: 100vw;
+	height: 100vh;
+	background-color: rgba(0, 0, 0, 0.7);
+	position: fixed;
+	top: 0;
+	left: 0;
+}
+
+.alert_content {
+	width: 700px;
+	height: 450px;
+	max-width: 100%;
+	/* outline: 1px solid #fff; */
+	border-top: 3px solid #4DD0E1;
+	background-color: rgba(34, 34, 34, 0.9);
+	/* box-shadow: 0 0 6px 3px rgba(0, 0, 0, 0.5); */
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	box-sizing: border-box;
+	padding: 40px;
+}
+
+.alert_content .close_icon {
+	position: absolute;
+	right: 10px;
+	top: 5px;
+	font-size: 28px;
+	color: rgba(238, 238, 238, 0.8);
+	cursor: pointer;
+}
+
+.alert_content h2 {
+	font-size: 20px;
+	color: #4DD0E1;
+	font-weight: 100;
+	text-align: center;
+	letter-spacing: 1px;
+}
+
+.alert_content p {
+	font-size: 14px;
+	line-height: 25px;
+	text-align: center;
+	color: rgba(238, 238, 238, 0.8);
+	letter-spacing: 1px;
+}
+
+.alert_mask ul {
+	margin: 1% 0 0 0;
+}
+
+.alert_mask ul li {
+	display: inline-block;
+	vertical-align: top;
+	/* outline: 1px solid #f00; */
+}
+
+.alert_mask ul li:first-child {
+	text-align: center;
+	width: 40%;
+	position: relative;
+	/* left: 33.5%; */
+	left: 0%;
+}
+
+.alert_mask ul li:first-child.active {
+	-webkit-animation: slideLeft 1.5s ease forwards;
+	   -moz-animation: slideLeft 1.5s ease forwards;
+		-ms-animation: slideLeft 1.5s ease forwards;
+			animation: slideLeft 1.5s ease forwards;
+}
+
+.alert_mask ul li:first-child button {
+	display: block;
+	width: 180px;
+	padding: 10px 20px;
+	font-size: 16px;
+	letter-spacing: 1px;
+	font-weight: 100;
+	cursor: pointer;
+}
+
+button.yes {
+	border: 1px solid rgba(184, 233, 134, 0.7);
+	background-color: transparent;
+	color: rgba(184, 233, 134, 1);
+	margin: 55px auto 0 auto;
+	transition: 0.3s;
+}
+
+button.yes:hover, button.yes.active {
+	background-color: rgba(184, 233, 134, 0.7);
+	color: rgba(12, 12, 12, 1);
+	transition: 0.3s;
+}
+
+button.no {
+	border: 1px solid rgba(216, 124, 124, 0.7);
+	background-color: transparent;
+	color: rgba(216, 124, 124, 1);
+	margin: 50px auto 0 auto;
+	transition: 0.3s;
+	transition-delay: 0.3s;
+}
+
+button.no:hover, button.no.active {
+	background-color: rgba(216, 124, 124, 0.7);
+	color: rgba(12, 12, 12, 1);
+	transition: 0.3s;
+	transition-delay: 0.3s;
+}
+
+.alert_mask ul li:last-child {
+	width: 58%;
+	height: 240px;
+	margin-left: 1%;
+	box-sizing: border-box;
+	padding-left: 40px;
+	line-height: 25px;
+}
+
+.alert_mask ul li:last-child.active {
+	transition-delay: 0.8s;
+	border-left: 1px solid rgba(191, 191, 191, 0.4);
+}
+
+.problem_form {
+	display: none;
+	opacity: 0;
+}
+
+.problem_form.active {
+	display: block;
+	-webkit-animation: appear 1s 0.8s ease-in-out forwards;
+	   -moz-animation: appear 1s 0.8s ease-in-out forwards;
+		-ms-animation: appear 1s 0.8s ease-in-out forwards;
+			animation: appear 1s 0.8s ease-in-out forwards;
+}
+
+.problem_form input[type=checkbox], .problem_form label {
+	cursor: pointer;
+}
+
+.problem_form label {
+	color: rgba(238, 238, 238, 0.8);
+	font-size: 14px;
+	font-weight: 100;
+	margin-left: 10px;
+	letter-spacing: 1px;
+}
+
+.problem_form input[type=checkbox]:checked + label {
+	color: rgba(216, 124, 124, 1);
+}
+
+.problem_form textarea {
+	max-width: 260px;
+	width: 260px;
+	height: 70px;
+	margin: 5px 0 0 27px;
+	background-color: transparent;
+	border: 1px solid rgba(238, 238, 238, 0.8);
+	box-sizing: border-box;
+	padding: 10px 15px;
+	color: rgba(238, 238, 238, 0.7);
+	font-size: 13px;
+	font-weight: 100;
+}
+
+.problem_form textarea:focus {
+	outline: none;
+	border: 1px solid rgba(216, 124, 124, 1);
+}
+
+.problem_form input[type=submit] {
+	border: 1px solid rgba(77, 208, 225, 0.7);
+	background-color: transparent;
+	margin: 5px 0 0 115px;
+	padding: 4px 20px 4px 25px;
+	color: rgba(77, 208, 225, 0.7);
+	font-size: 14px;
+	letter-spacing: 5px;
+	text-align: center;
+	font-weight: 100;
+	transition: 0.3s;
+	cursor: pointer;
+}
+
+.problem_form input[type=submit]:hover {
+	transition: 0.3s;
+	background-color: rgba(77, 208, 225, 0.6);
+	color: rgba(12, 12, 12, 1);
+}
+
+.problem_form input[type=submit]:focus {
+	outline: none;
+}
+
+.thankyou .check_icon {
+	margin: 15px 125px;
+	font-size: 64px;
+	color: rgba(184, 233, 134, 0.7);
+}
+
+.thankyou p {
+	text-align: center;
+	font-size: 14px;
+	letter-spacing: 1px;
+	font-weight: 100;
+	color: rgba(238, 238, 238, 0.8);
+}
+
+.thankyou {
+	display: none;
+	opacity: 0;
+}
+
+.thankyou.active {
+	display: block;
+	-webkit-animation: appear 1s 0.8s ease-in-out forwards;
+	   -moz-animation: appear 1s 0.8s ease-in-out forwards;
+		-ms-animation: appear 1s 0.8s ease-in-out forwards;
+			animation: appear 1s 0.8s ease-in-out forwards;
+}
+
+
+
+
+@-ms-keyframes slideLeft {
+	0% {left: 33.5%;}
+	100% {left: 0%;}
+}
+@-moz-keyframes slideLeft {
+	0% {left: 33.5%;}
+	100% {left: 0%;}
+}
+@-webkit-keyframes slideLeft {
+	0% {left: 33.5%;}
+	100% {left: 0%;}
+}
+@keyframes slideLeft {
+	0% {left: 33.5%;}
+	100% {left: 0%;}
+}
+
+
+@-ms-keyframes appear {
+	0% {opacity: 0;}
+	100% {opacity: 1;}
+}
+@-moz-keyframes appear {
+	0% {opacity: 0;}
+	100% {opacity: 1;}
+}
+@-webkit-keyframes appear {
+	0% {opacity: 0;}
+	100% {opacity: 1;}
+}
+@keyframes appear {
+	0% {opacity: 0;}
+	100% {opacity: 1;}
+}
+
+
+
+
+
+
+
+
+

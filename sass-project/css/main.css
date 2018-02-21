@@ -1,0 +1,55 @@
+/* need interpolation "xxx" to let preprocessor know its a variable, not part of string;
+    the interpolation can only be used when importing css files, cannot be used when importing scss files */
+@import url(https://fonts.googleapis.com/css?family=Alegreya+Sans);
+@import url(https://fonts.googleapis.com/css?family=Titillium+Web);
+a {
+  font-style: italic;
+  text-decoration: none; }
+
+* html body {
+  font-size: 125%; }
+
+body {
+  font-family: "Alegreya Sans", Arial, sans-serif;
+  color: #222222; }
+
+h1, h2, h3, h4 {
+  font-family: "Titillium Web", Georgia, serif; }
+
+h2 {
+  font-size: 22px;
+  font-weight: bold; }
+
+p {
+  font-family: "Alegreya Sans", Arial, sans-serif; }
+
+a {
+  color: #f27731; }
+
+.warning-button {
+  background-color: orange;
+  color: #ffffff;
+  padding: 8px 12px; }
+
+#header {
+  border-radius: 10px;
+  border: 1px solid #445566;
+  box-shadow: 2px 0px 4px #999999, 1px 1px 6px #f27731;
+  -moz-box-shadow: 2px 0px 4px #999999, 1px 1px 6px #f27731;
+  -webkit-box-shadow: 2px 0px 4px #999999, 1px 1px 6px #f27731;
+  height: 60px;
+  background-color: #170a48; }
+  #header #main-menu li {
+    display: inline; }
+  #header #main-menu a {
+    color: white; }
+
+#main {
+  width: 960px;
+  margin: auto; }
+
+#footer {
+  height: 90px;
+  background-color: #ccf962; }
+
+/*# sourceMappingURL=main.css.map */

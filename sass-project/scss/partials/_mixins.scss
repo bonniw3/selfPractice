@@ -1,0 +1,49 @@
+
+/* need interpolation "#{xxx}" to let preprocessor know its a variable, not part of string;
+    the interpolation can only be used when importing css files, cannot be used when importing scss files */
+@mixin google-fonts($font) {
+    $font: unquote($font);
+    @import url(https://fonts.googleapis.com/css?family=#{$font});
+}
+
+@mixin warning {
+    background-color: orange;
+    color: #ffffff;
+}
+
+// the ... is to pass in as many arguments as you want
+@mixin box-shadow($shadows...) {
+    box-shadow: $shadows;
+    -moz-box-shadow: $shadows;
+    -webkit-box-shadow: $shadows;
+}
+
+// for browser hacks
+@mixin apply-to-ie-6 {
+    * html {
+        @content;
+    }
+}
+
+@mixin large-text {
+    font: {
+        size: 22px;
+        weight: bold;
+    }
+}
+
+@mixin rounded($radius: 6px) {
+    border-radius: $radius;
+}
+
+@mixin box($radius: 6px, $border: 1px solid #999999) {
+    @include rounded($radius);
+    border: $border;
+}
+
+@mixin fancy-links {
+    a {
+        font-style: italic;
+        text-decoration: none;
+    }
+}

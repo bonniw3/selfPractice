@@ -1,0 +1,101 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000000;
+}
+
+.container {
+    margin: 100px auto;
+    max-width: 559px;
+    position: relative;
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.largeC { 
+    position: relative;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 1px solid #111;
+    position: relative;
+}
+
+.largeC:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: -4%;
+    left: -3%;
+    width: 95px;
+    height: 95px;
+    border-radius: 50%;
+    border: 5px solid transparent;
+    border-bottom: 5px solid rgb(255, 110, 64);
+    border-left: 5px solid rgb(255, 110, 64);
+    animation: spinRPause 2.5s cubic-bezier(0.2, 0.6, 0.4, 1) infinite;
+    z-index: 5;
+}
+
+.smallC {
+    position: relative;
+    top: 9%;
+    left: 9%;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 1px solid #111;
+    position: relative;
+}
+
+.smallC:after {
+    content: '';
+    display: block;
+    height: 75px;
+    width: 75px;
+    position: absolute;
+    top: -1%;
+    left: 0%;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    border-left: 2px solid rgb(255, 110, 64);
+    border-bottom: 2px solid rgb(255, 110, 64);
+    animation: spinR 1.5s linear infinite;
+}
+
+.innerDot {
+    width: 20px;
+    height: 20px;
+    border: 2px solid rgb(255, 150, 104);
+    position: absolute;
+    top: 37%;
+    left: 37%;
+    border-radius: 50%;
+    animation: fadeInOut 2.5s ease-in-out infinite alternate;
+}
+  
+@keyframes spinR {
+    0% { transform: rotate(0deg)}
+  100% { transform: rotate(360deg);}
+}
+
+@keyframes spinRPause {
+    0% { transform: rotate(45deg);}
+  100% { transform: rotate(405deg);}
+}
+
+@keyframes fadeInOut {
+      0% { opacity: 0; }
+     50% { opacity: 1; }
+    100% { opacity: 0; }
+}
